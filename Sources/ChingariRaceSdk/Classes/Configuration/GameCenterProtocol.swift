@@ -7,24 +7,24 @@
 
 import UIKit
 
-struct GameTheme {
+public struct GameTheme {
     /// imageNameFromAssets
-    var logo: String?
+    public var logo: String?
     
-    var buttonBackgroundColor: UIColor?
+    public var buttonBackgroundColor: UIColor?
     
-    static let `default` = GameTheme(logo: nil, buttonBackgroundColor: nil)
+    public static let `default` = GameTheme(logo: nil, buttonBackgroundColor: nil)
 }
 
-enum GameData: String, Codable {
+public enum GameData: String, Codable {
     case userBalance = "USER_BALANCE"
     case betSuccess = "BET_SUCCESS"
     case betFailed = "BET_FAILED"
 }
 
-protocol GameCenterProtocol {
+public protocol GameCenterProtocol {
 
-    func getGames() -> Result<[Game], Error>
+    func getGames() -> Result<[Game], GameSdkError>
 
     func setTheme(theme: GameTheme)
     

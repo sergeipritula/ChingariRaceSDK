@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Game: String, Codable {
+public enum Game: String, Codable {
     case racing = "RACING_GAME"
     case unknown = "UNKNONW"
 }

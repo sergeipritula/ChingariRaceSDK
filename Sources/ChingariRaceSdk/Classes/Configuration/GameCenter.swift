@@ -45,7 +45,7 @@ public class GameCenter: GameCenterProtocol {
     
     weak var dataUpdater: GameDataUpdateProtocol?
     
-    static var shared: GameCenter = GameCenter()
+    public static var shared: GameCenter = GameCenter()
     
     private(set) var diamondSubject = BehaviorRelay<Int>(value: 0)
     
@@ -71,7 +71,7 @@ public class GameCenter: GameCenterProtocol {
     
     private var disposeBag = DisposeBag()
     
-    func configure(appId: String, isTestEnv: Bool, complition completion: @escaping ((Bool) -> ())) {
+    public func configure(appId: String, isTestEnv: Bool, complition completion: @escaping ((Bool) -> ())) {
         self.appId = appId
         self.isTestEnv = isTestEnv
         
@@ -87,30 +87,29 @@ public class GameCenter: GameCenterProtocol {
             })
             .disposed(by: self.disposeBag)
     }
-    
    
-    func getGames() -> Result<[Game], any Error> {
+    public func getGames() -> Result<[Game], GameSdkError> {
         guard let sdkConfiguration = sdkConfiguration else {
-            return .failure(NSError(domain: "", code: 0, userInfo: nil))
+            return .failure(.gameNotImplemented)
         }
         
         let games = sdkConfiguration.games?.compactMap { Game(rawValue: $0) } ?? []
         return .success(games)
     }
     
-    func setTheme(theme: GameTheme) {
+    public func setTheme(theme: GameTheme) {
         self.gameTheme = theme
     }
     
-    func updateGameData(key: GameData, value: String) {
+    public func updateGameData(key: GameData, value: String) {
         
     }
     
-    func leaveGame() {
+    public func leaveGame() {
         
     }
     
-    func joinGame(presentingController: UIViewController,
+    public func joinGame(presentingController: UIViewController,
                   game: Game,
                   token: String,
                   userId: String,
@@ -178,11 +177,11 @@ public class GameCenter: GameCenterProtocol {
         self.delegate = delegate
     }
     
-    func setBalance(_ value: Int) {
+    public func setBalance(_ value: Int) {
         self.diamondSubject.accept(value)
     }
     
-    func updateBalance(_ value: Int) {
+    public func updateBalance(_ value: Int) {
         let total = self.diamondSubject.value
         self.diamondSubject.accept(total + value)
     }
