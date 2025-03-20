@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Desert.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
