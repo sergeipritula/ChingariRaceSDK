@@ -10,6 +10,6 @@ import Foundation
 public class ConsoleWriter {
     
     public static func hello() {
-        print("Hello world")
+        print("Hello")
     }
 }
