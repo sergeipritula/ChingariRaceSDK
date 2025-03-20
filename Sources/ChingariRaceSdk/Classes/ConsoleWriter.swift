@@ -7,9 +7,9 @@
 
 import Foundation
 
-class ConsoleWriter {
+public class ConsoleWriter {
     
-    static func hello() {
+    public static func hello() {
         print("Hello world")
     }
 }
