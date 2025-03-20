@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-protocol GameCenterDelegate: AnyObject {
+public protocol GameCenterDelegate: AnyObject {
     func openDiamondStore()
     
     func openLeaderboard()
@@ -25,7 +25,7 @@ protocol GameCenterDelegate: AnyObject {
     func didBetFailed()
 }
 
-protocol GameDataUpdateProtocol: AnyObject {
+public protocol GameDataUpdateProtocol: AnyObject {
     func didBalanceUpdated(balance: Int)
     
     func didBetSuccess()
@@ -33,7 +33,7 @@ protocol GameDataUpdateProtocol: AnyObject {
     func didBetFailed()
 }
 
-class GameCenter: GameCenterProtocol {
+public class GameCenter: GameCenterProtocol {
     
     private var appId: String?
     private var isTestEnv: Bool?
