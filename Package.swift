@@ -21,7 +21,7 @@ let package = Package(
         //        .package(url: "https://github.com/RxSwiftCommunity/RxGesture", .upToNextMajor(from: "4.0.0")),
         .package(url: "https://github.com/SnapKit/SnapKit.git", .upToNextMajor(from: "5.0.1")),
         .package(url: "https://github.com/slackhq/PanModal.git", .upToNextMinor(from: "1.2.7")),
-        .package(url: "https://github.com/airbnb/lottie-spm.git", .upToNextMinor(from: "4.5.0")),
+        .package(url: "https://github.com/airbnb/lottie-spm.git", .upToNextMinor(from: "4.5.1")),
         .package(url: "https://github.com/socketio/socket.io-client-swift", .upToNextMajor(from: "16.1.1")),
         .package(url: "https://github.com/SDWebImage/SDWebImage.git", from: "5.1.0")
     ],
