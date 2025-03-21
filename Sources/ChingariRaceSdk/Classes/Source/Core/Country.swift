@@ -36,7 +36,7 @@ open class Country {
         if image != nil {
             return image
         }
-        let flagImg = UIImage(named: imagePath)
+        let flagImg = UIImage(named: imagePath, in: .module, compatibleWith: nil)
         image = flagImg
         return image
     }

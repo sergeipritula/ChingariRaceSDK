@@ -11,14 +11,14 @@ import Lottie
 
 class CustomActivityIndicator: UIView {
     let bgView = UIView()
-    let animatedView = LottieAnimationView(name: "red_loader")
+    let animatedView = LottieAnimationView(name: "red_loader", bundle: .module)
     let imageView = UIImageView()
     
     func setup(color: UIColor) {
         bgView.backgroundColor = color
         animatedView.animationSpeed = 2.0
         animatedView.loopMode = .loop
-        imageView.image = UIImage(named: "room_avatar_placeholder")
+        imageView.image = UIImage(named: "room_avatar_placeholder", in: .module, compatibleWith: nil)
         bgView.isHidden = true
         imageView.isHidden = true
         self.isHidden = true

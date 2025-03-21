@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 // swiftlint:disable implicitly_unwrapped_optional
-public extension ViewCustomizer where ViewType: UILabel {
+internal extension ViewCustomizer where ViewType: UILabel {
     
     @available(*, deprecated, message: "Consider using set(font: CHFont).")
     @discardableResult

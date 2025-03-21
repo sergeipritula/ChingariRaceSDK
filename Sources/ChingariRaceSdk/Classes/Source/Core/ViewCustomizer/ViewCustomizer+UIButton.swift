@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-public extension ViewCustomizer where ViewType: UIButton {
+internal extension ViewCustomizer where ViewType: UIButton {
     
     @discardableResult
     func set(normalTitleColor: UIColor?, for state: UIControl.State = .normal) -> Self {

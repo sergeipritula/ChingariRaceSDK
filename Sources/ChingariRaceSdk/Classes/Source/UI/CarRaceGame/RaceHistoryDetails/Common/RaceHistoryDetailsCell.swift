@@ -85,7 +85,7 @@ class RaceHistoryDetailsCell: TableViewCell {
         
         [totalDiamondImageView, spendDiamondImageView, prizesDiamondImageView].forEach {
             $0.customizer
-                .set(image: UIImage(named: CarRaceGameConstants.Images.diamond))
+                .set(image: UIImage(named: CarRaceGameConstants.Images.diamond, in: .module, compatibleWith: nil))
                 .set(contentMode: .scaleAspectFit)
         }
         

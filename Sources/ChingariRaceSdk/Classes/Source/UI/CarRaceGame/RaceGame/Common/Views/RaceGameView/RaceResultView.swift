@@ -34,11 +34,11 @@ class RaceResultView: CHView {
         resultContainer.layer.cornerRadius = 16
         
         raceResultBackgroundImageView.customizer
-            .set(image: UIImage(named: CarRaceGameConstants.Images.raceResultBackground))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.raceResultBackground, in: .module, compatibleWith: nil))
             .set(contentMode: .scaleToFill)
         
         carImageView.customizer
-            .set(image: UIImage(named: CarRaceGameConstants.Images.monsterTruckSmall))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.monsterTruckSmall, in: .module, compatibleWith: nil))
             .set(contentMode: .scaleToFill)
     }
     
@@ -127,7 +127,7 @@ class RaceResultView: CHView {
         switch status {
         case .win:
             foregroundColor = UIColor(hexString: "#FFB872")
-            attachment.image = UIImage(named: CarRaceGameConstants.Images.diamond)
+            attachment.image = UIImage(named: CarRaceGameConstants.Images.diamond, in: .module, compatibleWith: nil)
             attachment.bounds = CGRect(x: 0, y: -4, width: 16, height: 16)
         case .loose:
             foregroundColor = .clear
@@ -189,7 +189,7 @@ class RaceResultView: CHView {
             switch status {
             case .win:
                 foregroundColor = UIColor(hexString: "#FFB872")
-                attachment.image = UIImage(named: CarRaceGameConstants.Images.diamond)
+                attachment.image = UIImage(named: CarRaceGameConstants.Images.diamond, in: .module, compatibleWith: nil)
                 attachment.bounds = CGRect(x: 0, y: -4, width: 16, height: 16)
             case .loose:
                 foregroundColor = .clear

@@ -53,13 +53,13 @@ class RaceHistoryCell: TableViewCell {
             .set(spacing: 3)
         
         diamondsImageView.customizer
-            .set(image: UIImage(named: CarRaceGameConstants.Images.diamond))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.diamond, in: .module, compatibleWith: nil))
         
         disclosureImageView.customizer
-            .set(image: UIImage(named: CarRaceGameConstants.Images.disclosure))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.disclosure, in: .module, compatibleWith: nil))
         
         carImageView.customizer
-            .set(image: UIImage(named: CarRaceGameConstants.Images.monsterTruckSmall))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.monsterTruckSmall, in: .module, compatibleWith: nil))
             .set(contentMode: .scaleAspectFit)
         
         timeLabel.customizer

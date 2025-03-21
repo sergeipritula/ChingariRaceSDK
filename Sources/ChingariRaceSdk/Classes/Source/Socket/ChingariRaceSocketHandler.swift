@@ -53,8 +53,9 @@ final class ChingariRaceSocketHandler: BaseSocketHandler, ChingariRaceSocketHand
     
     var sessionUpdatedEvent = PublishSubject<BERaceSessionUpdated>()
     
-    convenience init(token: String) {
-        self.init(url: NetworkConfigDev().baseUrl, headers: [
+    convenience init(token: String, isTestEnv: Bool) {
+        let config: NetworkConfigProtocol = isTestEnv ? NetworkConfigDev(): NetworkConfigProd()
+        self.init(url: config.baseUrl, headers: [
             "token": token,
             "platform": "ios",
             "appId": TokenStorage.shared.appId ?? "",

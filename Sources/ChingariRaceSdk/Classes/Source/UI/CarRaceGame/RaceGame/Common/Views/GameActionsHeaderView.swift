@@ -72,19 +72,19 @@ class GameActionsHeaderView: CHView {
             .set(alignment: .center)
         
         rankButton.customizer
-            .set(image: UIImage(named: CarRaceGameConstants.Images.rank))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.rank, in: .module, compatibleWith: nil))
             .set(contentMode: .scaleAspectFit)
         
         winRateRankButton.customizer
-            .set(image: UIImage(named: CarRaceGameConstants.Images.winRateRank))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.winRateRank, in: .module, compatibleWith: nil))
             .set(contentMode: .scaleAspectFit)
         
         historyButton.customizer
-            .set(image: UIImage(named: CarRaceGameConstants.Images.history))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.history, in: .module, compatibleWith: nil))
             .set(contentMode: .scaleAspectFit)
         
         rulesButton.customizer
-            .set(image: UIImage(named: CarRaceGameConstants.Images.rules))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.rules, in: .module, compatibleWith: nil))
             .set(contentMode: .scaleAspectFit)
     }
     

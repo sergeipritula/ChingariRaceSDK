@@ -36,8 +36,8 @@ public protocol GameDataUpdateProtocol: AnyObject {
 public class GameCenter: GameCenterProtocol {
     
     private var appId: String?
-    private var isTestEnv: Bool?
-//    private var chingariGame: ChingariGame?
+    private var isTestEnv: Bool = false
+
     private var sdkConfiguration: SdkConfigurationDTO?
     
     weak var delegate: GameCenterDelegate?
@@ -53,17 +53,18 @@ public class GameCenter: GameCenterProtocol {
     
     private(set) var gameTheme: GameTheme = .default
     private var gameCoordinator: RaceGameCoordinator?
-    private var socketManager = ChingariRaceService(tokenProvider: TokenAndUUIDProvider.shared)
+    private lazy var socketManager:  ChingariRaceServiceProtocol = {
+        let service = ChingariRaceService(tokenProvider: TokenAndUUIDProvider.shared, isTestEnv: isTestEnv)
+        return service
+    }()
     
     private lazy var networkingManager: ChingariRaceNetworkServiceProtocol = {
-        let isTestEnv = self.isTestEnv ?? false
         let config: NetworkConfigProtocol = isTestEnv ? NetworkConfigDev(): NetworkConfigProd()
         let service = ServiceFactory.makeRaceGameService(networkConfig: config, printLogs: false)
         return service
     }()
     
     private lazy var gamesNetworkingManager: GameNetworkServiceProtocol = {
-        let isTestEnv = self.isTestEnv ?? false
         let config: NetworkConfigProtocol = isTestEnv ? NetworkConfigDev(): NetworkConfigProd()
         let service = ServiceFactory.makeGameService(networkConfig: config, printLogs: false)
         return service
@@ -102,10 +103,6 @@ public class GameCenter: GameCenterProtocol {
     }
     
     public func updateGameData(key: GameData, value: String) {
-        
-    }
-    
-    public func leaveGame() {
         
     }
     
@@ -158,23 +155,25 @@ public class GameCenter: GameCenterProtocol {
         })
     }
     
-//    func retrieveToken(username: String, userId: String, completion: @escaping ((String) -> ())) {
-//        guard let appId = TokenStorage.shared.appId else { return }
-//        
-//        gamesNetworkingManager.token(requestData: .init(userId: userId,
-//                                                        name: username,
-//                                                        appId: appId,
-//                                                        profilePic: Constants.profileImage))
-//        .asObservable()
-//        .subscribe(onNext: { response in
-//            guard let token = response.data?.token else { return }
-//            completion(token)
-//        })
-//        .disposed(by: self.disposeBag)
-//    }
+    public func retrieveToken(appId: String,
+                       username: String,
+                       userId: String,
+                       profileImage: String, completion: @escaping ((String) -> ())) {
+        gamesNetworkingManager.token(requestData: .init(userId: userId,
+                                                        name: username,
+                                                        appId: appId,
+                                                        profilePic: profileImage))
+        .asObservable()
+        .subscribe(onNext: { response in
+            guard let token = response.data?.token else { return }
+            completion(token)
+        })
+        .disposed(by: self.disposeBag)
+    }
     
-    func setDelegate(_ delegate: GameCenterDelegate) {
-        self.delegate = delegate
+    
+    public func leaveGame() {
+        
     }
     
     public func setBalance(_ value: Int) {
@@ -184,10 +183,6 @@ public class GameCenter: GameCenterProtocol {
     public func updateBalance(_ value: Int) {
         let total = self.diamondSubject.value
         self.diamondSubject.accept(total + value)
-    }
-    
-    func leave() {
-        
     }
     
 }

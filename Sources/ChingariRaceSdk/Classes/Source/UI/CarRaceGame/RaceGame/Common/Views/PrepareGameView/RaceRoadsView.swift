@@ -193,10 +193,10 @@ class RaceRoadView: CHView {
             .set(spacing: 2)
         
         statsImageView.customizer
-            .set(image: UIImage(named: CarRaceGameConstants.Images.roadStats))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.roadStats, in: .module, compatibleWith: nil))
         
         rightArrowImageView.customizer
-            .set(image: UIImage(named: CarRaceGameConstants.Images.chevronRight))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.chevronRight, in: .module, compatibleWith: nil))
         
         roadLabel.customizer
             .set(font: .init(font: .poppinsBold, style: .caption1))
@@ -213,8 +213,8 @@ class RaceRoadView: CHView {
     func setupRoad(road: Road) {
         let isUnknown = road.roadType == .unknown
         
-        let unknownRoadImage = UIImage(named: "road_type_unknown")
-        let roadImage = UIImage(named: "road_type")
+        let unknownRoadImage = UIImage(named: "road_type_unknown", in: .module, compatibleWith: nil)
+        let roadImage = UIImage(named: "road_type", in: .module, compatibleWith: nil)
         arrowImageView.contentMode = .scaleToFill
         arrowImageView.image = isUnknown ? unknownRoadImage: roadImage
         

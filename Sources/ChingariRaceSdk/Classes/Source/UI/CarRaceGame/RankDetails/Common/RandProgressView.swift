@@ -33,7 +33,7 @@ class RankProgressView: CHView {
 //        )
         
         progressImageView.customizer
-            .set(image: UIImage(named: CarRaceGameConstants.Images.progress))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.progress, in: .module, compatibleWith: nil))
             .set(contentMode: .scaleAspectFill)
             .set(cornerRadius: 8)
             .set(clipsToBounds: true)

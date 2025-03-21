@@ -33,7 +33,7 @@ class RaceRulesViewController: ViewController<RaceRulesViewModel> {
             .set(cornerRadius: 22)
             .set(maskedCorners: [.layerMaxXMinYCorner, .layerMinXMinYCorner])
         
-        backButton.setImage(UIImage(named: CarRaceGameConstants.Images.back), for: .normal)
+        backButton.setImage(UIImage(named: CarRaceGameConstants.Images.back, in: .module, compatibleWith: nil), for: .normal)
         backButton.contentHorizontalAlignment = .leading
         backButton.contentVerticalAlignment = .top
         

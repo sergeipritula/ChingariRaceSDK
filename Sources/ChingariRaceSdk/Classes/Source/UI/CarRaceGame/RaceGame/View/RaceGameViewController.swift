@@ -41,12 +41,12 @@ class RaceGameViewController: ViewController<RaceGameViewModel> {
         
         backgroundImageView.customizer
             .set(clipsToBounds: false)
-            .set(image: UIImage(named: CarRaceGameConstants.Images.raceBackground))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.raceBackground, in: .module, compatibleWith: nil))
             .set(contentMode: .scaleToFill)
         
         blurBacgroundImage.customizer
             .set(clipsToBounds: false)
-            .set(image: UIImage(named: CarRaceGameConstants.Images.raceBackgroundBlur))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.raceBackgroundBlur, in: .module, compatibleWith: nil))
             .set(contentMode: .scaleToFill)
         
         logoImageView.customizer.set(contentMode: .scaleAspectFit)

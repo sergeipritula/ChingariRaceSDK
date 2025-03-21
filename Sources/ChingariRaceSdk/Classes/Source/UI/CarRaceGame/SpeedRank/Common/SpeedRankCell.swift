@@ -57,7 +57,7 @@ class SpeedRankCell: TableViewCell {
         
         backgroundImageView.customizer
             .set(contentMode: .scaleToFill)
-            .set(image: UIImage(named: CarRaceGameConstants.Images.speedRankBackground))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.speedRankBackground, in: .module, compatibleWith: nil))
         
         stackView.customizer
             .set(axis: .horizontal)
@@ -85,11 +85,11 @@ class SpeedRankCell: TableViewCell {
             .set(textColor: .black)
         
         speedImageView.customizer
-            .set(image: UIImage(named: CarRaceGameConstants.Images.speedometer))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.speedometer, in: .module, compatibleWith: nil))
             .set(contentMode: .scaleAspectFit)
         
         carImageView.customizer
-            .set(image: UIImage(named: CarRaceGameConstants.Images.monsterTruckSmall))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.monsterTruckSmall, in: .module, compatibleWith: nil))
             .set(contentMode: .scaleAspectFit)
         
         backgroundImageView.isHidden = arc4random() % 2 == 0
@@ -183,8 +183,8 @@ class SpeedRankCell: TableViewCell {
         backgroundImageView.isHidden = !viewModel.isHighlighted
         
         speedImageView.image = viewModel.isHighlighted ?
-            UIImage(named: CarRaceGameConstants.Images.speedometerWhite):
-            UIImage(named: CarRaceGameConstants.Images.speedometer)
+            UIImage(named: CarRaceGameConstants.Images.speedometerWhite, in: .module, compatibleWith: nil):
+            UIImage(named: CarRaceGameConstants.Images.speedometer, in: .module, compatibleWith: nil)
         
         [rankLabel, carLabel, speedLabel].forEach {
             $0.textColor = viewModel.isHighlighted ? .white : .black

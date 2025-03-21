@@ -79,15 +79,15 @@ class RaceHistoryStatsView: CHView {
             .set(textAlignment: .center)
         
         personImageView.customizer
-            .set(image: UIImage(named: CarRaceGameConstants.Images.person))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.person, in: .module, compatibleWith: nil))
             .set(contentMode: .scaleAspectFit)
         
         diamondsImageView.customizer
-            .set(image: UIImage(named: CarRaceGameConstants.Images.diamond))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.diamond, in: .module, compatibleWith: nil))
             .set(contentMode: .scaleAspectFit)
         
         carImageView.customizer
-            .set(image: UIImage(named: CarRaceGameConstants.Images.monsterTruckSmall))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.monsterTruckSmall, in: .module, compatibleWith: nil))
             .set(contentMode: .scaleAspectFit)
 
         badgeView.customizer
@@ -207,7 +207,7 @@ class RaceHistoryStatsView: CHView {
         ])
         
         let attachment = NSTextAttachment()
-        attachment.image = UIImage(named: CarRaceGameConstants.Images.diamond)
+        attachment.image = UIImage(named: CarRaceGameConstants.Images.diamond, in: .module, compatibleWith: nil)
         attachment.bounds = CGRect(x: 0, y: 0, width: 12, height: 12)
         attributedString.append(NSAttributedString(attachment: attachment))
         

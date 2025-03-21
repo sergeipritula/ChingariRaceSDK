@@ -175,36 +175,36 @@ extension RoadType {
     var image: UIImage? {
         switch self {
         case .potholes:
-            return UIImage(named: "race_road_potholes_default")
+            return UIImage(named: "race_road_potholes_default", in: .module, compatibleWith: nil)
         case .bumpy:
-            return UIImage(named: "race_road_bumpy_default")
+            return UIImage(named: "race_road_bumpy_default", in: .module, compatibleWith: nil)
         case .dirt:
-            return UIImage(named: "race_road_dirt_default")
+            return UIImage(named: "race_road_dirt_default", in: .module, compatibleWith: nil)
         case .desert:
-            return UIImage(named: "race_road_desert_default")
+            return UIImage(named: "race_road_desert_default", in: .module, compatibleWith: nil)
         case .highway:
-            return UIImage(named: "race_road_highway_default")
+            return UIImage(named: "race_road_highway_default", in: .module, compatibleWith: nil)
         case .expressway:
-            return UIImage(named: "race_road_expressway_default")
+            return UIImage(named: "race_road_expressway_default", in: .module, compatibleWith: nil)
         case .unknown:
-            return UIImage(named: "race_road_unknown_default")
+            return UIImage(named: "race_road_unknown_default", in: .module, compatibleWith: nil)
         }
     }
     
     var imageFaded: UIImage? {
         switch self {
         case .potholes:
-            return UIImage(named: "race_road_potholes_faded")
+            return UIImage(named: "race_road_potholes_faded", in: .module, compatibleWith: nil)
         case .bumpy:
-            return UIImage(named: "race_road_bumpy_faded")
+            return UIImage(named: "race_road_bumpy_faded", in: .module, compatibleWith: nil)
         case .dirt:
-            return UIImage(named: "race_road_dirt_faded")
+            return UIImage(named: "race_road_dirt_faded", in: .module, compatibleWith: nil)
         case .desert:
-            return UIImage(named: "race_road_desert_faded")
+            return UIImage(named: "race_road_desert_faded", in: .module, compatibleWith: nil)
         case .highway:
-            return UIImage(named: "race_road_highway_faded")
+            return UIImage(named: "race_road_highway_faded", in: .module, compatibleWith: nil)
         case .expressway:
-            return UIImage(named: "race_road_expressway_faded")
+            return UIImage(named: "race_road_expressway_faded", in: .module, compatibleWith: nil)
         case .unknown:
             return nil
         }
@@ -213,17 +213,17 @@ extension RoadType {
     var imageGame: UIImage? {
         switch self {
         case .potholes:
-            return UIImage(named: "race_road_potholes_game")
+            return UIImage(named: "race_road_potholes_game", in: .module, compatibleWith: nil)
         case .bumpy:
-            return UIImage(named: "race_road_bumpy_game")
+            return UIImage(named: "race_road_bumpy_game", in: .module, compatibleWith: nil)
         case .dirt:
-            return UIImage(named: "race_road_dirt_game")
+            return UIImage(named: "race_road_dirt_game", in: .module, compatibleWith: nil)
         case .desert:
-            return UIImage(named: "race_road_desert_game")
+            return UIImage(named: "race_road_desert_game", in: .module, compatibleWith: nil)
         case .highway:
-            return UIImage(named: "race_road_highway_game")
+            return UIImage(named: "race_road_highway_game", in: .module, compatibleWith: nil)
         case .expressway:
-            return UIImage(named: "race_road_expressway_game")
+            return UIImage(named: "race_road_expressway_game", in: .module, compatibleWith: nil)
         case .unknown:
             return nil
         }
@@ -251,17 +251,17 @@ extension RoadType {
     var imageRounded: UIImage? {
         switch self {
         case .potholes:
-            return UIImage(named: "race_road_potholes_small")
+            return UIImage(named: "race_road_potholes_small", in: .module, compatibleWith: nil)
         case .bumpy:
-            return UIImage(named: "race_road_bumpy_small")
+            return UIImage(named: "race_road_bumpy_small", in: .module, compatibleWith: nil)
         case .dirt:
-            return UIImage(named: "race_road_dirt_small")
+            return UIImage(named: "race_road_dirt_small", in: .module, compatibleWith: nil)
         case .desert:
-            return UIImage(named: "race_road_desert_small")
+            return UIImage(named: "race_road_desert_small", in: .module, compatibleWith: nil)
         case .highway:
-            return UIImage(named: "race_road_highway_small")
+            return UIImage(named: "race_road_highway_small", in: .module, compatibleWith: nil)
         case .expressway:
-            return UIImage(named: "race_road_expressway_small")
+            return UIImage(named: "race_road_expressway_small", in: .module, compatibleWith: nil)
         case .unknown:
             return nil
         }

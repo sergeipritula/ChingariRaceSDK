@@ -111,11 +111,11 @@ class PrepareRaceGameHeaderView: CHView {
             .set(backgroundColor: .clear)
         
         gameInfoBackbroundImageView.customizer
-            .set(image: UIImage(named: CarRaceGameConstants.Images.purpleBackground3))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.purpleBackground3, in: .module, compatibleWith: nil))
             .set(contentMode: .scaleToFill)
         
         diamondsContainerBackgroundImageView.customizer
-            .set(image: UIImage(named: CarRaceGameConstants.Images.plusContainer))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.plusContainer, in: .module, compatibleWith: nil))
             .set(contentMode: .scaleToFill)
         
         [diamondsLabel, diamondsInfoLabel, participantsLabel, timeLabel].forEach {
@@ -125,12 +125,12 @@ class PrepareRaceGameHeaderView: CHView {
         }
         
         participantImageView.customizer
-            .set(image: UIImage(named: CarRaceGameConstants.Images.person))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.person, in: .module, compatibleWith: nil))
             .set(contentMode: .scaleAspectFit)
         
         [diamondsImageView, diamondsInfoImageView].forEach {
             $0.customizer
-                .set(image: UIImage(named: CarRaceGameConstants.Images.diamond))
+                .set(image: UIImage(named: CarRaceGameConstants.Images.diamond, in: .module, compatibleWith: nil))
                 .set(contentMode: .scaleAspectFit)
         }
     }
@@ -255,7 +255,7 @@ class PrepareRaceGameHeaderView: CHView {
         diamondsLabel.text = "\(session.totalBetsAmount)"
         
         if session.state != .bet {
-            self.gameInfoBackbroundImageView.image = UIImage(named: CarRaceGameConstants.Images.purpleBackground3)
+            self.gameInfoBackbroundImageView.image = UIImage(named: CarRaceGameConstants.Images.purpleBackground3, in: .module, compatibleWith: nil)
         }
     }
     
@@ -269,7 +269,7 @@ class PrepareRaceGameHeaderView: CHView {
             .subscribe(onNext: { (self, seconds) in
                 let isRed = seconds <= 10
                 let backgroundImage = isRed ? CarRaceGameConstants.Images.purpleBackground3Red : CarRaceGameConstants.Images.purpleBackground3
-                self.gameInfoBackbroundImageView.image = UIImage(named: backgroundImage)
+                self.gameInfoBackbroundImageView.image = UIImage(named: backgroundImage, in: .module, compatibleWith: nil)
                 self.timeLabel.textColor = isRed ? .white : .black
                 self.timeLabel.text = "\(seconds)s"
             })

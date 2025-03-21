@@ -49,9 +49,10 @@ class ChingariRaceService: ChingariRaceServiceProtocol {
     private var sessionUpdatedPublisher = PublishSubject<BERaceSessionUpdated>()
     private let disposeBag = DisposeBag()
     
-    init(tokenProvider: AuthorizationTokenProvider) {
+    init(tokenProvider: AuthorizationTokenProvider, isTestEnv: Bool) {
         self.tokenProvider = tokenProvider
-        self.signalingManager = ChingariRaceSocketHandler(token: tokenProvider.authorizationToken() ?? "")
+        self.signalingManager = ChingariRaceSocketHandler(token: tokenProvider.authorizationToken() ?? "",
+                                                          isTestEnv: isTestEnv)
         configureBindings()
     }
     

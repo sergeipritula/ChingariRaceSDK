@@ -107,7 +107,8 @@ class RaceGameProgressView: CHView {
     
     private let lottieContainerView = UIView()
     
-    private var lottieAnimationView = LottieAnimationView(name: CarRaceGameConstants.Lottie.trafficLightBanner)
+    private var lottieAnimationView = LottieAnimationView(name: CarRaceGameConstants.Lottie.trafficLightBanner,
+                                                          bundle: .module)
     
     private let topBorderImageView = UIImageView()
     
@@ -151,11 +152,11 @@ class RaceGameProgressView: CHView {
             $0.contentMode = .scaleToFill
         }
         
-        startLineImageView.image = UIImage(named: CarRaceGameConstants.Images.startLine)
-        finishLineImageView.image = UIImage(named: CarRaceGameConstants.Images.finishLine)
+        startLineImageView.image = UIImage(named: CarRaceGameConstants.Images.startLine, in: .module, compatibleWith: nil)
+        finishLineImageView.image = UIImage(named: CarRaceGameConstants.Images.finishLine, in: .module, compatibleWith: nil)
         
         [topBorderImageView, bottomBorderImageView].forEach {
-            $0.image = UIImage(named: CarRaceGameConstants.Images.raceBorder)
+            $0.image = UIImage(named: CarRaceGameConstants.Images.raceBorder, in: .module, compatibleWith: nil)
             $0.contentMode = .scaleToFill
         }
         
@@ -301,7 +302,8 @@ class RaceGameProgressView: CHView {
         }
         
         lottieAnimationView.removeFromSuperview()
-        lottieAnimationView = LottieAnimationView(name: CarRaceGameConstants.Lottie.trafficLightBanner)
+        lottieAnimationView = LottieAnimationView(name: CarRaceGameConstants.Lottie.trafficLightBanner,
+                                                  bundle: .module)
         
         lottieContainerView.addSubview(lottieAnimationView)
         lottieAnimationView.snp.makeConstraints {
@@ -342,7 +344,8 @@ class RaceGameProgressView: CHView {
     
     func performGameInProgress(session: ChingariRaceSession) {
         lottieAnimationView.removeFromSuperview()
-        lottieAnimationView = LottieAnimationView(name: CarRaceGameConstants.Lottie.raceTrack)
+        lottieAnimationView = LottieAnimationView(name: CarRaceGameConstants.Lottie.raceTrack,
+                                                  bundle: .module)
         
         lottieContainerView.addSubview(lottieAnimationView)
         lottieAnimationView.snp.makeConstraints {

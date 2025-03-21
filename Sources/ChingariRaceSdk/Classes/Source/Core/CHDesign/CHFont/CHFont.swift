@@ -9,11 +9,25 @@ import Foundation
 import UIKit
 import SwiftUI
 
-public struct CHFont {
+internal struct CHFont {
     public let uiFont: UIFont
     
     public init(font: CHFontType, style: UIFont.TextStyle) {
         self.uiFont = font.uiFont(style: style)
+        self.registerFont(named: font.rawValue)
+    }
+    
+    private func registerFont(named name: String)  {
+        let bundle = Bundle.module
+        
+        guard let fontURL = bundle.url(forResource: name, withExtension: "ttf"),
+              let fontDataProvider = CGDataProvider(url: fontURL as CFURL),
+              let font = CGFont(fontDataProvider) else {
+            return
+        }
+        
+        var error: Unmanaged<CFError>?
+        CTFontManagerRegisterGraphicsFont(font, &error)
     }
 }
 
@@ -66,7 +80,7 @@ extension UIFont.TextStyle {
     }
 }
 
-public extension CHFont {
+internal extension CHFont {
     var font: Font {
         Font(self.uiFont)
     }

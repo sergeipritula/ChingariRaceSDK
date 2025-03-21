@@ -39,7 +39,7 @@ class SpeedRankViewController: ViewController<SpeedRankViewModel> {
             .set(cornerRadius: 22)
             .set(maskedCorners: [.layerMaxXMinYCorner, .layerMinXMinYCorner])
         
-        backButton.setImage(UIImage(named: CarRaceGameConstants.Images.back), for: .normal)
+        backButton.setImage(UIImage(named: CarRaceGameConstants.Images.back, in: .module, compatibleWith: nil), for: .normal)
         backButton.contentHorizontalAlignment = .leading
         backButton.contentVerticalAlignment = .top
         
@@ -50,11 +50,11 @@ class SpeedRankViewController: ViewController<SpeedRankViewModel> {
             .set(numberOfLines: 0)
         
         arrowRoadImageView.customizer
-            .set(image: UIImage(named: CarRaceGameConstants.Images.raceArrowLong))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.raceArrowLong, in: .module, compatibleWith: nil))
             .set(contentMode: .scaleToFill)
         
         roadTypeImageView.customizer
-            .set(image: UIImage(named: CarRaceGameConstants.Images.roadFaded))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.roadFaded, in: .module, compatibleWith: nil))
             .set(contentMode: .scaleToFill)
         
         roadTypeLabel.customizer

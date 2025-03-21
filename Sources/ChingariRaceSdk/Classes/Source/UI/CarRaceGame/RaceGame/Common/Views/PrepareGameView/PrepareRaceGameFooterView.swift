@@ -81,11 +81,11 @@ class PrepareRaceGameFooterView: CHView {
             .set(alignment: .center)
         
         backgroundImageView.customizer
-            .set(image: UIImage(named: CarRaceGameConstants.Images.diamondsInactive))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.diamondsInactive, in: .module, compatibleWith: nil))
             .set(contentMode: .scaleToFill)
         
         diamondsIcon.customizer
-            .set(image: UIImage(named: CarRaceGameConstants.Images.diamond))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.diamond, in: .module, compatibleWith: nil))
             .set(isHidden: true)
         
         diamondLabel.customizer
@@ -93,11 +93,11 @@ class PrepareRaceGameFooterView: CHView {
             .set(textColor: .white)
         
         playButton.customizer
-            .set(backgroundImage: UIImage(named: CarRaceGameConstants.Images.playBackgroundInactive))
+            .set(backgroundImage: UIImage(named: CarRaceGameConstants.Images.playBackgroundInactive, in: .module, compatibleWith: nil))
             .set(font: .init(font: .poppinsRegular, style: .title3))
         
-        minusButton.setImage(UIImage(named: CarRaceGameConstants.Images.minus), for: .normal)
-        plusButton.setImage(UIImage(named: CarRaceGameConstants.Images.plus), for: .normal)
+        minusButton.setImage(UIImage(named: CarRaceGameConstants.Images.minus, in: .module, compatibleWith: nil), for: .normal)
+        plusButton.setImage(UIImage(named: CarRaceGameConstants.Images.plus, in: .module, compatibleWith: nil), for: .normal)
         
         plusButton.addTarget(self, action: #selector(buttonDown), for: .touchDown)
         plusButton.addTarget(self, action: #selector(buttonDown), for: .touchDragExit)
@@ -173,9 +173,9 @@ class PrepareRaceGameFooterView: CHView {
                 self.plusButton.isUserInteractionEnabled = isEnabled
                 self.minusButton.isUserInteractionEnabled = isEnabled
                 
-                self.playButton.setBackgroundImage(UIImage(named: isEnabled ? CarRaceGameConstants.Images.playBackgroundActive : CarRaceGameConstants.Images.playBackgroundInactive), for: .normal)
+                self.playButton.setBackgroundImage(UIImage(named: isEnabled ? CarRaceGameConstants.Images.playBackgroundActive : CarRaceGameConstants.Images.playBackgroundInactive, in: .module, compatibleWith: nil), for: .normal)
                 
-                self.backgroundImageView.image = UIImage(named: isEnabled ? CarRaceGameConstants.Images.diamondsActive : CarRaceGameConstants.Images.diamondsInactive)
+                self.backgroundImageView.image = UIImage(named: isEnabled ? CarRaceGameConstants.Images.diamondsActive : CarRaceGameConstants.Images.diamondsInactive, in: .module, compatibleWith: nil)
                 
                 self.diamondLabel.isHidden = !isEnabled
                 self.diamondsIcon.isHidden = !isEnabled

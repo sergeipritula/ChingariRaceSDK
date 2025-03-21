@@ -20,7 +20,7 @@ public extension String {
 public extension NSTextAttachment {
     static func getCenteredImageAttachment(with imageName: String, font: UIFont?) -> NSTextAttachment {
         let imageAttachment = NSTextAttachment()
-        guard let image = UIImage(named: imageName),
+        guard let image = UIImage(named: imageName, in: .module, compatibleWith: nil),
             let font = font else { return imageAttachment }
 
         imageAttachment.bounds = CGRect(

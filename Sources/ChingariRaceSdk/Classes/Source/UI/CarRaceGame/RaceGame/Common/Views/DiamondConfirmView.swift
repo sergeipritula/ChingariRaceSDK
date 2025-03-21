@@ -70,7 +70,7 @@ class DiamondsConfirmView: CHView {
             .set(normalTitleColor: .white)
         
         closeButton.customizer
-            .set(image: UIImage(named: "close_gray"))
+            .set(image: UIImage(named: "close_gray", in: .module, compatibleWith: nil))
     }
     
     override func setupConstraints() {
@@ -144,7 +144,7 @@ class DiamondsConfirmView: CHView {
                 ])
                 
                 let attachment = NSTextAttachment()
-                attachment.image = UIImage(named: "ic_game_diamond")
+                attachment.image = UIImage(named: "ic_game_diamond", in: .module, compatibleWith: nil)
                 attachment.bounds = CGRect(x: 0, y: 0, width: 20, height: 20)
                 
                 amountString.append(NSAttributedString(attachment: attachment))

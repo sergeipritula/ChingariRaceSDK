@@ -60,15 +60,15 @@ class WinRateRankCell: CollectionViewCell {
             .set(textColor: .white)
         
         rateBackgroundImageView.customizer
-            .set(image: UIImage(named: CarRaceGameConstants.Images.orangeBackground))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.orangeBackground, in: .module, compatibleWith: nil))
             .set(contentMode: .scaleToFill)
         
         speedBackgroundImageView.customizer
-            .set(image: UIImage(named: CarRaceGameConstants.Images.purpleBackground))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.purpleBackground, in: .module, compatibleWith: nil))
             .set(contentMode: .scaleToFill)
         
         carImageView.customizer
-            .set(image: UIImage(named: CarRaceGameConstants.Images.monsterTruckSmall))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.monsterTruckSmall, in: .module, compatibleWith: nil))
             .set(contentMode: .scaleAspectFit)
     }
     

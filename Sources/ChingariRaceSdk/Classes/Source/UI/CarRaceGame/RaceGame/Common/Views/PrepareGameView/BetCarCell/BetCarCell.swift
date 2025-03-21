@@ -60,7 +60,7 @@ class BetCarCell: CollectionViewCell {
 //        )
         
         infoButton.customizer
-            .set(image: UIImage(named: CarRaceGameConstants.Images.infoIcon))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.infoIcon, in: .module, compatibleWith: nil))
         
         infoContainerView.customizer
             .set(cornerRadius: 6)
@@ -71,10 +71,10 @@ class BetCarCell: CollectionViewCell {
             .set(textColor: .white)
         
         diamondsIcon.customizer
-            .set(image: UIImage(named: CarRaceGameConstants.Images.diamond))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.diamond, in: .module, compatibleWith: nil))
         
         bottomDiamondsIcon.customizer
-            .set(image: UIImage(named: CarRaceGameConstants.Images.diamond))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.diamond, in: .module, compatibleWith: nil))
         
         diamondsLabel.customizer
             .set(font: .init(font: .poppinsRegular, style: .caption2))

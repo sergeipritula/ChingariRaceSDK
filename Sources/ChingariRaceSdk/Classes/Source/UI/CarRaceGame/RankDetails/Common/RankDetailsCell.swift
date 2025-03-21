@@ -38,10 +38,10 @@ class RankDetailsCell: CollectionViewCell {
         
         carImageView.contentMode = .scaleAspectFit
         
-        leftButton.setImage(UIImage(named: CarRaceGameConstants.Images.arrowLeft), for: .normal)
+        leftButton.setImage(UIImage(named: CarRaceGameConstants.Images.arrowLeft, in: .module, compatibleWith: nil), for: .normal)
         leftButton.contentHorizontalAlignment = .leading
         
-        rightButton.setImage(UIImage(named: CarRaceGameConstants.Images.arrowRight), for: .normal)
+        rightButton.setImage(UIImage(named: CarRaceGameConstants.Images.arrowRight, in: .module, compatibleWith: nil), for: .normal)
         rightButton.contentHorizontalAlignment = .trailing
         
         let flowLayout = UICollectionViewFlowLayout()

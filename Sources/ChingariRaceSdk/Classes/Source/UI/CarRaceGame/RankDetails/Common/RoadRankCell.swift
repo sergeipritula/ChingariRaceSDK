@@ -32,7 +32,7 @@ class RoadRankCell: CollectionViewCell {
         
         roadTypeImageView.customizer
             .set(contentMode: .scaleToFill)
-            .set(image: UIImage(named: CarRaceGameConstants.Images.roadRounded))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.roadRounded, in: .module, compatibleWith: nil))
             .set(borderWidth: 2)
             .set(borderColor: .white)
             .set(cornerRadius: 6)
@@ -45,7 +45,7 @@ class RoadRankCell: CollectionViewCell {
         )
         
         backgroundImageView.customizer
-            .set(image: UIImage(named: CarRaceGameConstants.Images.roadPurpleBackground))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.roadPurpleBackground, in: .module, compatibleWith: nil))
             .set(contentMode: .scaleToFill)
         
         roadTypeLabel.customizer

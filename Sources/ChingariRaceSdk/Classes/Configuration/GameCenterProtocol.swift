@@ -13,6 +13,11 @@ public struct GameTheme {
     
     public var buttonBackgroundColor: UIColor?
     
+    public init(logo: String?, buttonBackgroundColor: UIColor?) {
+        self.logo = logo
+        self.buttonBackgroundColor = buttonBackgroundColor
+    }
+    
     public static let `default` = GameTheme(logo: nil, buttonBackgroundColor: nil)
 }
 
@@ -30,7 +35,10 @@ public protocol GameCenterProtocol {
     
     func configure(appId: String, isTestEnv: Bool, complition: @escaping ((Bool) -> ()))
     
-//    func retrieveToken(username: String, userId: String, completion: @escaping ((String) -> ()))
+    func retrieveToken(appId: String,
+                       username: String,
+                       userId: String,
+                       profileImage: String, completion: @escaping ((String) -> ()))
     
     func joinGame(presentingController: UIViewController,
                   game: Game,

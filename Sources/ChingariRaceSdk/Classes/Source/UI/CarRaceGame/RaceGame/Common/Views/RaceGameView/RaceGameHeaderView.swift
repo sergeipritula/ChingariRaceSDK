@@ -89,7 +89,7 @@ class ParticipantsSegmentView: CHView {
         containerView.backgroundColor = .clear
         
         backgroundImageView.customizer
-            .set(image: UIImage(named: CarRaceGameConstants.Images.resultRaceContainer))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.resultRaceContainer, in: .module, compatibleWith: nil))
             .set(contentMode: .scaleToFill)
         
         participantsStackView.customizer
@@ -103,11 +103,11 @@ class ParticipantsSegmentView: CHView {
             .set(distribution: .fill)
         
         participantsImageView.customizer
-            .set(image: UIImage(named: CarRaceGameConstants.Images.person))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.person, in: .module, compatibleWith: nil))
             .set(contentMode: .scaleAspectFit)
         
         diamondsImageView.customizer
-            .set(image: UIImage(named: CarRaceGameConstants.Images.diamond))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.diamond, in: .module, compatibleWith: nil))
             .set(contentMode: .scaleAspectFit)
         
         [participantsLabel, diamondsLabel].forEach {
@@ -213,7 +213,7 @@ class RaceResultSegmentView: CHView {
         containerView.backgroundColor = .clear
         
         backgroundImageView.customizer
-            .set(image: UIImage(named: CarRaceGameConstants.Images.resultRaceContainerDiamonds))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.resultRaceContainerDiamonds, in: .module, compatibleWith: nil))
             .set(contentMode: .scaleToFill)
         
         participantsStackView.customizer
@@ -227,11 +227,11 @@ class RaceResultSegmentView: CHView {
             .set(distribution: .fill)
         
         participantsImageView.customizer
-            .set(image: UIImage(named: CarRaceGameConstants.Images.diamond))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.diamond, in: .module, compatibleWith: nil))
             .set(contentMode: .scaleAspectFit)
         
         diamondsImageView.customizer
-            .set(image: UIImage(named: CarRaceGameConstants.Images.diamond))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.diamond, in: .module, compatibleWith: nil))
             .set(contentMode: .scaleAspectFit)
         
         [participantsLabel, diamondsLabel].forEach {
