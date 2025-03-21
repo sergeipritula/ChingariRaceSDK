@@ -91,7 +91,7 @@ class BetCarCell: CollectionViewCell {
             .set(textColor: UIColor(hexString: "#2C2334").withAlphaComponent(0.7))
         
         bottomBackgroundImageView.customizer
-            .set(image: UIImage(named: CarRaceGameConstants.Images.orangeBackground))
+            .set(image: UIImage(named: CarRaceGameConstants.Images.orangeBackground, in: .module, compatibleWith: nil))
             .set(contentMode: .scaleToFill)
         
         topContainerView.customizer
